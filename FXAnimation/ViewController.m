@@ -9,7 +9,7 @@
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, copy)   NSArray *dataArray;
+@property (nonatomic, copy)   NSArray<NSDictionary *> *dataArray;
 @end
 
 @implementation ViewController
@@ -29,7 +29,13 @@
 
 #pragma mark - Data
 - (void)setupData {
-    self.dataArray = @[@"1", @"2", @"3"];
+    self.dataArray = @[
+    @{@"title": @"平移+旋转+变色", @"vc": @"CABasicAnimationVC"},
+    @{@"title": @"layer展示图片", @"vc": @"CGImageVC"},
+    @{@"title": @"垂直轴偏移", @"vc": @"ZPositionVC"},
+    @{@"title": @"事件穿透", @"vc": @"HitTestVC"},
+    @{@"title": @"仿射变化", @"vc": @"HitTestVC"},
+    ];
 }
 
 #pragma mark - UITableViewDataSource
@@ -39,13 +45,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = self.dataArray[indexPath.row];
+    cell.textLabel.text = self.dataArray[indexPath.row][@"title"];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
+    
+    NSDictionary *dict = self.dataArray[indexPath.row];
+    UIViewController *vc = [NSClassFromString(dict[@"vc"]) new];
+    vc.navigationItem.title = dict[@"title"];
+    vc.view.backgroundColor = UIColor.whiteColor;
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 #pragma mark - Lazy
