@@ -9,9 +9,7 @@
 
 @interface HitTestVC ()
 
-@property (strong, nonatomic) HitTestView *containerView;
-@property (nonatomic, strong) CALayer *containerLayer;
-@property (strong, nonatomic) HitTestView *innerView;
+@property (strong, nonatomic) UIView *containerView;
 @property (nonatomic, strong) CALayer *innerLayer;
 
 @end
@@ -25,26 +23,24 @@
 }
 
 - (void)setupUI {
-    _containerView = [[HitTestView alloc] initWithFrame:CGRectMake(100, 100, 300, 300)];
+    _containerView = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 300, 300)];
+    _containerView.backgroundColor = UIColor.redColor;
     [self.view addSubview:_containerView];
-    
-    _containerLayer = [CALayer layer];
-    _containerLayer.frame = CGRectMake(0, 0, 300, 300);
-    _containerLayer.backgroundColor = UIColor.redColor.CGColor;
-    [_containerView.layer addSublayer:_containerLayer];
-    
-    _innerView = [[HitTestView alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
-    [self.view addSubview:_innerView];
 
     _innerLayer = [CALayer layer];
     _innerLayer.frame = CGRectMake(0, 0, 150, 150);
-    _innerLayer.backgroundColor = UIColor.yellowColor.CGColor;
-    [_innerView.layer addSublayer:_innerLayer];
+    _innerLayer.backgroundColor = UIColor.blueColor.CGColor;
+    [self.containerView.layer addSublayer:_innerLayer];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGPoint point = [[touches anyObject] locationInView:self.view];
-    
+    CALayer *layer = [self.containerView.layer hitTest:point];
+    if (layer == self.innerLayer) {
+        NSLog(@"在蓝色view中");
+    } else {
+        NSLog(@"在红色view中");
+    }
 }
 
 @end
@@ -55,7 +51,7 @@
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     // 判断是否有交互、是否隐藏
     if (self.isUserInteractionEnabled == NO || self.alpha  == 0.0 || self.hidden == true) {
-        return [self hitTest:point withEvent:event];
+        return nil;
     }
     
     // 判断坐标
@@ -67,8 +63,9 @@
                 return hitTestView;
             }
         }
+        return self;
     }
-    return [self hitTest:point withEvent:event];
+    return nil;
 }
 
 @end

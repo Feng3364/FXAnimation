@@ -34,7 +34,7 @@
     @{@"title": @"layer展示图片", @"vc": @"CGImageVC"},
     @{@"title": @"垂直轴偏移", @"vc": @"ZPositionVC"},
     @{@"title": @"事件穿透", @"vc": @"HitTestVC"},
-    @{@"title": @"仿射变化", @"vc": @"HitTestVC"},
+    @{@"title": @"旋转", @"vc": @"CGTransform3DVC"},
     ];
 }
 
