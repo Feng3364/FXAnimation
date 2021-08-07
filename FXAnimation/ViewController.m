@@ -35,6 +35,7 @@
     @{@"title": @"垂直轴偏移", @"vc": @"ZPositionVC"},
     @{@"title": @"事件穿透", @"vc": @"HitTestVC"},
     @{@"title": @"旋转", @"vc": @"CGTransform3DVC"},
+    @{@"title": @"旋转综合训练", @"vc": @"CGTransformPracticeVC"},
     ];
 }
 
