@@ -15,6 +15,10 @@
 		DC94481B26B3A77D00F896D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC94481A26B3A77D00F896D0 /* Assets.xcassets */; };
 		DC94481E26B3A77D00F896D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC94481C26B3A77D00F896D0 /* LaunchScreen.storyboard */; };
 		DC94482126B3A77D00F896D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC94482026B3A77D00F896D0 /* main.m */; };
+		DC948FF626BE2BC3003205B6 /* CATransformLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC948FF526BE2BC3003205B6 /* CATransformLayerVC.m */; };
+		DC948FF926BE2EAF003205B6 /* CAGradientLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC948FF826BE2EAF003205B6 /* CAGradientLayerVC.m */; };
+		DC948FFC26BE3323003205B6 /* CAReplicatorLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC948FFB26BE3323003205B6 /* CAReplicatorLayerVC.m */; };
+		DC948FFF26BE3C7B003205B6 /* CAEmitterLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC948FFE26BE3C7B003205B6 /* CAEmitterLayerVC.m */; };
 		DCFA166D26B3F0450096BB69 /* CGImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA166C26B3F0450096BB69 /* CGImageVC.m */; };
 		DCFA167426B3F1AA0096BB69 /* ZPositionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA167326B3F1AA0096BB69 /* ZPositionVC.m */; };
 		DCFA167B26B3F3EB0096BB69 /* HitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA167A26B3F3EB0096BB69 /* HitTestVC.m */; };
@@ -37,6 +41,14 @@
 		DC94481D26B3A77D00F896D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC94481F26B3A77D00F896D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC94482026B3A77D00F896D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC948FF426BE2BC3003205B6 /* CATransformLayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATransformLayerVC.h; sourceTree = "<group>"; };
+		DC948FF526BE2BC3003205B6 /* CATransformLayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATransformLayerVC.m; sourceTree = "<group>"; };
+		DC948FF726BE2EAF003205B6 /* CAGradientLayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAGradientLayerVC.h; sourceTree = "<group>"; };
+		DC948FF826BE2EAF003205B6 /* CAGradientLayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAGradientLayerVC.m; sourceTree = "<group>"; };
+		DC948FFA26BE3323003205B6 /* CAReplicatorLayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAReplicatorLayerVC.h; sourceTree = "<group>"; };
+		DC948FFB26BE3323003205B6 /* CAReplicatorLayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAReplicatorLayerVC.m; sourceTree = "<group>"; };
+		DC948FFD26BE3C7B003205B6 /* CAEmitterLayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAEmitterLayerVC.h; sourceTree = "<group>"; };
+		DC948FFE26BE3C7B003205B6 /* CAEmitterLayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAEmitterLayerVC.m; sourceTree = "<group>"; };
 		DCFA166B26B3F0450096BB69 /* CGImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGImageVC.h; sourceTree = "<group>"; };
 		DCFA166C26B3F0450096BB69 /* CGImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGImageVC.m; sourceTree = "<group>"; };
 		DCFA167226B3F1AA0096BB69 /* ZPositionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPositionVC.h; sourceTree = "<group>"; };
@@ -107,6 +119,14 @@
 				DCFA168126B3F5EC0096BB69 /* CGTransform3DVC.m */,
 				DC19BA8A26BA77DF00A943A7 /* CGTransformPracticeVC.h */,
 				DC19BA8B26BA77DF00A943A7 /* CGTransformPracticeVC.m */,
+				DC948FF426BE2BC3003205B6 /* CATransformLayerVC.h */,
+				DC948FF526BE2BC3003205B6 /* CATransformLayerVC.m */,
+				DC948FF726BE2EAF003205B6 /* CAGradientLayerVC.h */,
+				DC948FF826BE2EAF003205B6 /* CAGradientLayerVC.m */,
+				DC948FFA26BE3323003205B6 /* CAReplicatorLayerVC.h */,
+				DC948FFB26BE3323003205B6 /* CAReplicatorLayerVC.m */,
+				DC948FFD26BE3C7B003205B6 /* CAEmitterLayerVC.h */,
+				DC948FFE26BE3C7B003205B6 /* CAEmitterLayerVC.m */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -184,11 +204,15 @@
 				DC94482126B3A77D00F896D0 /* main.m in Sources */,
 				DC94481326B3A77D00F896D0 /* SceneDelegate.m in Sources */,
 				DC55DC1926BB742F0020125C /* CABasicAnimationVC.m in Sources */,
+				DC948FF626BE2BC3003205B6 /* CATransformLayerVC.m in Sources */,
 				DCFA167B26B3F3EB0096BB69 /* HitTestVC.m in Sources */,
 				DCFA167426B3F1AA0096BB69 /* ZPositionVC.m in Sources */,
 				DCFA166D26B3F0450096BB69 /* CGImageVC.m in Sources */,
 				DCFA168226B3F5EC0096BB69 /* CGTransform3DVC.m in Sources */,
+				DC948FF926BE2EAF003205B6 /* CAGradientLayerVC.m in Sources */,
+				DC948FFC26BE3323003205B6 /* CAReplicatorLayerVC.m in Sources */,
 				DC19BA8C26BA77DF00A943A7 /* CGTransformPracticeVC.m in Sources */,
+				DC948FFF26BE3C7B003205B6 /* CAEmitterLayerVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

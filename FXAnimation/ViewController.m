@@ -36,6 +36,10 @@
     @{@"title": @"事件穿透", @"vc": @"HitTestVC"},
     @{@"title": @"旋转", @"vc": @"CGTransform3DVC"},
     @{@"title": @"旋转综合训练", @"vc": @"CGTransformPracticeVC"},
+    @{@"title": @"旋转图层", @"vc": @"CATransformLayerVC"},
+    @{@"title": @"渐变色图层", @"vc": @"CAGradientLayerVC"},
+    @{@"title": @"反射图层", @"vc": @"CAReplicatorLayerVC"},
+    @{@"title": @"粒子发射", @"vc": @"CAEmitterLayerVC"},
     ];
 }
 
@@ -58,6 +62,7 @@
     UIViewController *vc = [NSClassFromString(dict[@"vc"]) new];
     vc.navigationItem.title = dict[@"title"];
     vc.view.backgroundColor = UIColor.whiteColor;
+    vc.edgesForExtendedLayout = UIRectEdgeNone;
     [self.navigationController pushViewController:vc animated:true];
 }
 
