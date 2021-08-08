@@ -16,11 +16,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self createUI];
+    [self setupUI];
 }
 
 #pragma mark - UI
-- (void)createUI {
+- (void)setupUI {
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.frame = CGRectMake(10, 50, self.view.frame.size.width - 20, 100);
     

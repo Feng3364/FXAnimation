@@ -40,6 +40,8 @@
     @{@"title": @"渐变色图层", @"vc": @"CAGradientLayerVC"},
     @{@"title": @"反射图层", @"vc": @"CAReplicatorLayerVC"},
     @{@"title": @"粒子发射", @"vc": @"CAEmitterLayerVC"},
+    @{@"title": @"雨滴", @"vc": @"RainEmitterVC"},
+    @{@"title": @"点赞", @"vc": @"ThumbVC"},
     ];
 }
 

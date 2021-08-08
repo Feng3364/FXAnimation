@@ -16,11 +16,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self createUI];
+    [self setupUI];
 }
 
 #pragma mark - UI
-- (void)createUI {
+- (void)setupUI {
     UIImage *image = [UIImage imageNamed:@"AppIcon"];
     UIImageView *imgv = [[UIImageView alloc] initWithImage:image];
     imgv.frame = CGRectMake(100, 100, 200, 200);

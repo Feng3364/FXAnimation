@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self createUI];
+    [self setupUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -28,7 +28,7 @@
 }
 
 #pragma mark - UI
-- (void)createUI {
+- (void)setupUI {
     CAEmitterCell *colorBallCell = [CAEmitterCell emitterCell];
     // 粒子名称
     colorBallCell.name = @"colorBallCell";
