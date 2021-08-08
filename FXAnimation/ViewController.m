@@ -42,6 +42,7 @@
     @{@"title": @"粒子发射", @"vc": @"CAEmitterLayerVC"},
     @{@"title": @"雨滴", @"vc": @"RainEmitterVC"},
     @{@"title": @"点赞", @"vc": @"ThumbVC"},
+    @{@"title": @"视频播放", @"vc": @"AVPlayLayerVC"},
     ];
 }
 

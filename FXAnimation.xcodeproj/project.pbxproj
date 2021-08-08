@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DC19BA8C26BA77DF00A943A7 /* CGTransformPracticeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC19BA8B26BA77DF00A943A7 /* CGTransformPracticeVC.m */; };
 		DC55DC1926BB742F0020125C /* CABasicAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC55DC1826BB742F0020125C /* CABasicAnimationVC.m */; };
+		DC73920926C00C060022D3EF /* AVPlayLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC73920826C00C060022D3EF /* AVPlayLayerVC.m */; };
 		DC878F4626BF91FE00E1D7E7 /* RainEmitterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC878F4526BF91FE00E1D7E7 /* RainEmitterVC.m */; };
 		DC878F4926BFA97400E1D7E7 /* ThumbVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC878F4826BFA97400E1D7E7 /* ThumbVC.m */; };
 		DC94481026B3A77D00F896D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC94480F26B3A77D00F896D0 /* AppDelegate.m */; };
@@ -21,6 +22,7 @@
 		DC948FF926BE2EAF003205B6 /* CAGradientLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC948FF826BE2EAF003205B6 /* CAGradientLayerVC.m */; };
 		DC948FFC26BE3323003205B6 /* CAReplicatorLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC948FFB26BE3323003205B6 /* CAReplicatorLayerVC.m */; };
 		DC948FFF26BE3C7B003205B6 /* CAEmitterLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC948FFE26BE3C7B003205B6 /* CAEmitterLayerVC.m */; };
+		DCC05E7D26C0230E009A56C7 /* movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DCC05E7C26C0230E009A56C7 /* movie.mp4 */; };
 		DCFA166D26B3F0450096BB69 /* CGImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA166C26B3F0450096BB69 /* CGImageVC.m */; };
 		DCFA167426B3F1AA0096BB69 /* ZPositionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA167326B3F1AA0096BB69 /* ZPositionVC.m */; };
 		DCFA167B26B3F3EB0096BB69 /* HitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA167A26B3F3EB0096BB69 /* HitTestVC.m */; };
@@ -32,6 +34,8 @@
 		DC19BA8B26BA77DF00A943A7 /* CGTransformPracticeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGTransformPracticeVC.m; sourceTree = "<group>"; };
 		DC55DC1726BB742F0020125C /* CABasicAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CABasicAnimationVC.h; sourceTree = "<group>"; };
 		DC55DC1826BB742F0020125C /* CABasicAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CABasicAnimationVC.m; sourceTree = "<group>"; };
+		DC73920726C00C060022D3EF /* AVPlayLayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayLayerVC.h; sourceTree = "<group>"; };
+		DC73920826C00C060022D3EF /* AVPlayLayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayLayerVC.m; sourceTree = "<group>"; };
 		DC878F4426BF91FE00E1D7E7 /* RainEmitterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RainEmitterVC.h; sourceTree = "<group>"; };
 		DC878F4526BF91FE00E1D7E7 /* RainEmitterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RainEmitterVC.m; sourceTree = "<group>"; };
 		DC878F4726BFA97400E1D7E7 /* ThumbVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThumbVC.h; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 		DC948FFB26BE3323003205B6 /* CAReplicatorLayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAReplicatorLayerVC.m; sourceTree = "<group>"; };
 		DC948FFD26BE3C7B003205B6 /* CAEmitterLayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAEmitterLayerVC.h; sourceTree = "<group>"; };
 		DC948FFE26BE3C7B003205B6 /* CAEmitterLayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAEmitterLayerVC.m; sourceTree = "<group>"; };
+		DCC05E7C26C0230E009A56C7 /* movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = movie.mp4; sourceTree = "<group>"; };
 		DCFA166B26B3F0450096BB69 /* CGImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGImageVC.h; sourceTree = "<group>"; };
 		DCFA166C26B3F0450096BB69 /* CGImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGImageVC.m; sourceTree = "<group>"; };
 		DCFA167226B3F1AA0096BB69 /* ZPositionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPositionVC.h; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 		DC94480D26B3A77D00F896D0 /* FXAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				DCC05E7C26C0230E009A56C7 /* movie.mp4 */,
 				DC94483726B3BCD300F896D0 /* Animation */,
 				DC94480E26B3A77D00F896D0 /* AppDelegate.h */,
 				DC94480F26B3A77D00F896D0 /* AppDelegate.m */,
@@ -137,6 +143,8 @@
 				DC878F4526BF91FE00E1D7E7 /* RainEmitterVC.m */,
 				DC878F4726BFA97400E1D7E7 /* ThumbVC.h */,
 				DC878F4826BFA97400E1D7E7 /* ThumbVC.m */,
+				DC73920726C00C060022D3EF /* AVPlayLayerVC.h */,
+				DC73920826C00C060022D3EF /* AVPlayLayerVC.m */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 			files = (
 				DC94481E26B3A77D00F896D0 /* LaunchScreen.storyboard in Resources */,
 				DC94481B26B3A77D00F896D0 /* Assets.xcassets in Resources */,
+				DCC05E7D26C0230E009A56C7 /* movie.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +220,7 @@
 			files = (
 				DC94481626B3A77D00F896D0 /* ViewController.m in Sources */,
 				DC94481026B3A77D00F896D0 /* AppDelegate.m in Sources */,
+				DC73920926C00C060022D3EF /* AVPlayLayerVC.m in Sources */,
 				DC94482126B3A77D00F896D0 /* main.m in Sources */,
 				DC94481326B3A77D00F896D0 /* SceneDelegate.m in Sources */,
 				DC55DC1926BB742F0020125C /* CABasicAnimationVC.m in Sources */,
