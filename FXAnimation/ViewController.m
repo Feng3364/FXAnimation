@@ -41,9 +41,14 @@
     @{@"title": @"反射图层", @"vc": @"CAReplicatorLayerVC"},
     @{@"title": @"粒子发射", @"vc": @"CAEmitterLayerVC"},
     @{@"title": @"雨滴", @"vc": @"RainEmitterVC"},
-    @{@"title": @"点赞", @"vc": @"ThumbVC"},
+    @{@"title": @"点赞-动效", @"vc": @"ThumbVC"},
     @{@"title": @"视频播放", @"vc": @"AVPlayLayerVC"},
     @{@"title": @"摇晃抖动", @"vc": @"SharkVC"},
+    @{@"title": @"贝塞尔曲线路径", @"vc": @"BezierPathAnimationVC"},
+    @{@"title": @"拖拽小红点", @"vc": @"PanGestureVC"},
+    @{@"title": @"转场动画", @"vc": @"PushStyleVC"},
+    @{@"title": @"自定义转场动画", @"vc": @"CustomPushVC"},
+    @{@"title": @"喜欢-动效", @"vc": @"LikeVC"},
     ];
 }
 
