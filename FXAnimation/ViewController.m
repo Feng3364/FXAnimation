@@ -49,6 +49,7 @@
     @{@"title": @"转场动画", @"vc": @"PushStyleVC"},
     @{@"title": @"自定义转场动画", @"vc": @"CustomPushVC"},
     @{@"title": @"喜欢-动效", @"vc": @"LikeVC"},
+    @{@"title": @"文本放大动效", @"vc": @"LabelVC"},
     ];
 }
 
