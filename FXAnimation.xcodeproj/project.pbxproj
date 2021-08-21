@@ -31,6 +31,8 @@
 		DC948FFC26BE3323003205B6 /* CAReplicatorLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC948FFB26BE3323003205B6 /* CAReplicatorLayerVC.m */; };
 		DC948FFF26BE3C7B003205B6 /* CAEmitterLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC948FFE26BE3C7B003205B6 /* CAEmitterLayerVC.m */; };
 		DCC05E7D26C0230E009A56C7 /* movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DCC05E7C26C0230E009A56C7 /* movie.mp4 */; };
+		DCE50D5D26D0E0C0009CB342 /* MusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE50D5C26D0E0C0009CB342 /* MusicVC.m */; };
+		DCE50D6026D0F247009CB342 /* ScaleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE50D5F26D0F247009CB342 /* ScaleVC.m */; };
 		DCFA166D26B3F0450096BB69 /* CGImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA166C26B3F0450096BB69 /* CGImageVC.m */; };
 		DCFA167426B3F1AA0096BB69 /* ZPositionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA167326B3F1AA0096BB69 /* ZPositionVC.m */; };
 		DCFA167B26B3F3EB0096BB69 /* HitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA167A26B3F3EB0096BB69 /* HitTestVC.m */; };
@@ -83,6 +85,10 @@
 		DC948FFD26BE3C7B003205B6 /* CAEmitterLayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAEmitterLayerVC.h; sourceTree = "<group>"; };
 		DC948FFE26BE3C7B003205B6 /* CAEmitterLayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAEmitterLayerVC.m; sourceTree = "<group>"; };
 		DCC05E7C26C0230E009A56C7 /* movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = movie.mp4; sourceTree = "<group>"; };
+		DCE50D5B26D0E0C0009CB342 /* MusicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicVC.h; sourceTree = "<group>"; };
+		DCE50D5C26D0E0C0009CB342 /* MusicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicVC.m; sourceTree = "<group>"; };
+		DCE50D5E26D0F247009CB342 /* ScaleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScaleVC.h; sourceTree = "<group>"; };
+		DCE50D5F26D0F247009CB342 /* ScaleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScaleVC.m; sourceTree = "<group>"; };
 		DCFA166B26B3F0450096BB69 /* CGImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGImageVC.h; sourceTree = "<group>"; };
 		DCFA166C26B3F0450096BB69 /* CGImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGImageVC.m; sourceTree = "<group>"; };
 		DCFA167226B3F1AA0096BB69 /* ZPositionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZPositionVC.h; sourceTree = "<group>"; };
@@ -183,6 +189,10 @@
 				DC92BBD826C3F06F00C865EE /* LikeVC.m */,
 				DC91AA3C26C4E25600859464 /* LabelVC.h */,
 				DC91AA3D26C4E25600859464 /* LabelVC.m */,
+				DCE50D5B26D0E0C0009CB342 /* MusicVC.h */,
+				DCE50D5C26D0E0C0009CB342 /* MusicVC.m */,
+				DCE50D5E26D0F247009CB342 /* ScaleVC.h */,
+				DCE50D5F26D0F247009CB342 /* ScaleVC.m */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -263,6 +273,7 @@
 				DC94481026B3A77D00F896D0 /* AppDelegate.m in Sources */,
 				DC91EB0C26C21352001312D8 /* BezierPathAnimationVC.m in Sources */,
 				DC73920926C00C060022D3EF /* AVPlayLayerVC.m in Sources */,
+				DCE50D5D26D0E0C0009CB342 /* MusicVC.m in Sources */,
 				DC92BBD926C3F06F00C865EE /* LikeVC.m in Sources */,
 				DC94482126B3A77D00F896D0 /* main.m in Sources */,
 				DC94481326B3A77D00F896D0 /* SceneDelegate.m in Sources */,
@@ -279,6 +290,7 @@
 				DC948FFC26BE3323003205B6 /* CAReplicatorLayerVC.m in Sources */,
 				DC878F4926BFA97400E1D7E7 /* ThumbVC.m in Sources */,
 				DC91AA3E26C4E25600859464 /* LabelVC.m in Sources */,
+				DCE50D6026D0F247009CB342 /* ScaleVC.m in Sources */,
 				DC19BA8C26BA77DF00A943A7 /* CGTransformPracticeVC.m in Sources */,
 				DC948FFF26BE3C7B003205B6 /* CAEmitterLayerVC.m in Sources */,
 			);

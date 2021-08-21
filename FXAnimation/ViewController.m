@@ -50,6 +50,8 @@
     @{@"title": @"自定义转场动画", @"vc": @"CustomPushVC"},
     @{@"title": @"喜欢-动效", @"vc": @"LikeVC"},
     @{@"title": @"文本放大动效", @"vc": @"LabelVC"},
+    @{@"title": @"音乐播放效果", @"vc": @"MusicVC"},
+    @{@"title": @"持续放大缩小效果", @"vc": @"ScaleVC"},
     ];
 }
 
