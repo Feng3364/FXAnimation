@@ -71,12 +71,15 @@
 }
 
 - (void)addFace:(NSInteger)index withTransform:(CATransform3D)transform {
+    // 1.获取视图
     UIView *face = self.transformArray[index];
     [self.containerView addSubview:face];
     
+    // 设置中心点
     CGSize containerSize = self.containerView.bounds.size;
     face.frame = CGRectMake(containerSize.width / 2.0, containerSize.height / 2.0, 200, 200);
     
+    // 3.设置变换
     face.layer.transform = transform;
 }
 

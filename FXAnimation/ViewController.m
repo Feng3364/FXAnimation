@@ -34,6 +34,7 @@
     @{@"title": @"layer展示图片", @"vc": @"CGImageVC"},
     @{@"title": @"垂直轴偏移", @"vc": @"ZPositionVC"},
     @{@"title": @"事件穿透", @"vc": @"HitTestVC"},
+    @{@"title": @"子视图超出父视图范围", @"vc": @"FXTabBarController"},
     @{@"title": @"旋转", @"vc": @"CGTransform3DVC"},
     @{@"title": @"旋转综合训练", @"vc": @"CGTransformPracticeVC"},
     @{@"title": @"旋转图层", @"vc": @"CATransformLayerVC"},

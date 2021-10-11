@@ -8,6 +8,8 @@
 #import "AVPlayLayerVC.h"
 #import <AVFoundation/AVFoundation.h>
 
+#define ScreenWidth UIScreen.mainScreen.bounds.size.width
+
 static CATransform3D CATransform3DMakePerspective(CGFloat z) {
     CATransform3D t = CATransform3DIdentity;
     t.m34 = - 1.0 / z;
@@ -30,8 +32,6 @@ static CATransform3D CATransform3DMakePerspective(CGFloat z) {
 
 #pragma mark - UI
 - (void)setupUI {
-    double ScreenWidth = UIScreen.mainScreen.bounds.size.width;
-    
     NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"movie" ofType:@"mp4"];
     self.player = [AVPlayer playerWithURL:[NSURL fileURLWithPath:videoPath]];
     AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];

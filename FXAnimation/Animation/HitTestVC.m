@@ -38,8 +38,10 @@
     CALayer *layer = [self.containerView.layer hitTest:point];
     if (layer == self.innerLayer) {
         NSLog(@"在蓝色view中");
-    } else {
+    } else if (layer == self.containerView.layer) {
         NSLog(@"在红色view中");
+    } else {
+        NSLog(@"...");
     }
 }
 
@@ -48,6 +50,8 @@
 
 @implementation HitTestView
 
+// HitTest调用顺序：touch->UIApplication->UIWindow->UIViewController->UIView->Subview->...->当前view
+//事件的传递顺序与之相反
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     // 判断是否有交互、是否隐藏
     if (self.isUserInteractionEnabled == NO || self.alpha  == 0.0 || self.hidden == true) {
