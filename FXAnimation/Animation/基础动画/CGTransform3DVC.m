@@ -59,11 +59,13 @@
     _imgv1.layer.transform = transform;
     _imgv1.layer.doubleSided = NO;//（默认开启正背面渲染）
     
+    // 绕y轴旋转
     CATransform3D transform2 = CATransform3DMakeRotation(M_PI_4, 0, 1, 0);
     CATransform3D transform3 = CATransform3DMakeRotation(-M_PI_4, 0, 1, 0);
     _imgv2.layer.transform = transform2;
     _imgv3.layer.transform = transform3;
     
+    // 绕z轴旋转
     CATransform3D transform4 = CATransform3DIdentity;
     transform4.m34 = -1.0/500;
     transform4 = CATransform3DMakeRotation(M_PI_4, 0, 0, 1);

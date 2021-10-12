@@ -32,37 +32,37 @@
     self.dataArray = @[
         @{@"title": @"基础动画", @"list": @[
             @{@"title": @"平移+旋转+变色", @"vc": @"CABasicAnimationVC"},
-            @{@"title": @"layer展示图片", @"vc": @"CGImageVC"},
-            @{@"title": @"垂直轴偏移", @"vc": @"ZPositionVC"},
-            @{@"title": @"事件穿透", @"vc": @"HitTestVC"},
+            @{@"title": @"展示图片", @"vc": @"CGImageVC"},
+            @{@"title": @"景深", @"vc": @"ZPositionVC"},
+            @{@"title": @"3D旋转", @"vc": @"CGTransform3DVC"},
+            @{@"title": @"透视投影实现立体盒子", @"vc": @"CGTransformPracticeVC"},
         ]},
         @{@"title": @"Layer图层", @"list": @[
-            
+            @{@"title": @"CAShapeLayer实现火柴人", @"vc": @"CAShapeLayerVC"},
+            @{@"title": @"CATextLayer替代UILabel", @"vc": @"CATextLayerVC"},
+            @{@"title": @"CATransformLayer实现立体三维图形效果", @"vc": @"CATransformLayerVC"},
+            @{@"title": @"CAGradientLayer实现渐变效果", @"vc": @"CAGradientLayerVC"},
+            @{@"title": @"CAReplicatorLayer实现镜面效果", @"vc": @"CAReplicatorLayerVC"},
+            @{@"title": @"CAEmitterLayer实现粒子发射", @"vc": @"CAEmitterLayerVC"},
+            @{@"title": @"AVPlayLayer视频播放", @"vc": @"AVPlayLayerVC"},
         ]},
         @{@"title": @"TabBar", @"list": @[
+            @{@"title": @"事件穿透", @"vc": @"HitTestVC"},
             @{@"title": @"子视图超出父视图范围", @"vc": @"FXTabBarController"},
         ]},
         @{@"title": @"组合动画", @"list": @[
-            
+            @{@"title": @"雨滴", @"vc": @"RainEmitterVC"},
+            @{@"title": @"点赞-动效", @"vc": @"ThumbVC"},
+            @{@"title": @"摇晃抖动", @"vc": @"SharkVC"},
+            @{@"title": @"贝塞尔曲线路径", @"vc": @"BezierPathAnimationVC"},
+            @{@"title": @"拖拽小红点", @"vc": @"PanGestureVC"},
+            @{@"title": @"转场动画", @"vc": @"PushStyleVC"},
+            @{@"title": @"自定义转场动画", @"vc": @"CustomPushVC"},
+            @{@"title": @"喜欢-动效", @"vc": @"LikeVC"},
+            @{@"title": @"文本放大动效", @"vc": @"LabelVC"},
+            @{@"title": @"音乐播放效果", @"vc": @"MusicVC"},
+            @{@"title": @"持续放大缩小效果", @"vc": @"ScaleVC"},
         ]},
-//    @{@"title": @"旋转", @"vc": @"CGTransform3DVC"},
-//    @{@"title": @"旋转综合训练", @"vc": @"CGTransformPracticeVC"},
-//    @{@"title": @"旋转图层", @"vc": @"CATransformLayerVC"},
-//    @{@"title": @"渐变色图层", @"vc": @"CAGradientLayerVC"},
-//    @{@"title": @"反射图层", @"vc": @"CAReplicatorLayerVC"},
-//    @{@"title": @"粒子发射", @"vc": @"CAEmitterLayerVC"},
-//    @{@"title": @"雨滴", @"vc": @"RainEmitterVC"},
-//    @{@"title": @"点赞-动效", @"vc": @"ThumbVC"},
-//    @{@"title": @"视频播放", @"vc": @"AVPlayLayerVC"},
-//    @{@"title": @"摇晃抖动", @"vc": @"SharkVC"},
-//    @{@"title": @"贝塞尔曲线路径", @"vc": @"BezierPathAnimationVC"},
-//    @{@"title": @"拖拽小红点", @"vc": @"PanGestureVC"},
-//    @{@"title": @"转场动画", @"vc": @"PushStyleVC"},
-//    @{@"title": @"自定义转场动画", @"vc": @"CustomPushVC"},
-//    @{@"title": @"喜欢-动效", @"vc": @"LikeVC"},
-//    @{@"title": @"文本放大动效", @"vc": @"LabelVC"},
-//    @{@"title": @"音乐播放效果", @"vc": @"MusicVC"},
-//    @{@"title": @"持续放大缩小效果", @"vc": @"ScaleVC"},
     ];
 }
 
@@ -72,20 +72,28 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArray.count;
+    NSArray *list = self.dataArray[section][@"list"];
+    return list.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = self.dataArray[indexPath.row][@"title"];
+    NSArray *list = self.dataArray[indexPath.section][@"list"];
+    cell.textLabel.text = list[indexPath.row][@"title"];
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *title = self.dataArray[section][@"title"];
+    return title;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
-    NSDictionary *dict = self.dataArray[indexPath.row];
+    NSArray *list = self.dataArray[indexPath.section][@"list"];
+    NSDictionary *dict = list[indexPath.row];
     UIViewController *vc = [NSClassFromString(dict[@"vc"]) new];
     vc.navigationItem.title = dict[@"title"];
     vc.view.backgroundColor = UIColor.whiteColor;
