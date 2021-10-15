@@ -1,11 +1,11 @@
 //
-//  CustomPushVC.m
+//  CustomTransitionVC.m
 //  FXAnimation
 //
 //  Created by Felix on 2021/8/11.
 //
 
-#import "CustomPushVC.h"
+#import "CustomTransitionVC.h"
 
 #pragma mark - Class-CircleTransition
 @interface CircleTransition () <CAAnimationDelegate>
@@ -31,7 +31,7 @@
     
     // 添加动画
     UIButton *btn;
-    CustomPushVC *vc1;
+    CustomTransitionVC *vc1;
     CustomPopVC *vc2;
     if (_isPush) {
         vc1 = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -113,12 +113,12 @@
 
 @end
 
-#pragma mark - Class-CustomPushVC
-@interface CustomPushVC () <UINavigationControllerDelegate>
+#pragma mark - Class-CustomTransitionVC
+@interface CustomTransitionVC () <UINavigationControllerDelegate>
 
 @end
 
-@implementation CustomPushVC
+@implementation CustomTransitionVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -1,5 +1,5 @@
 //
-//  CustomPushVC.h
+//  CustomTransitionVC.h
 //  FXAnimation
 //
 //  Created by Felix on 2021/8/11.
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-@interface CustomPushVC : UIViewController
+@interface CustomTransitionVC : UIViewController
 
 @property (nonatomic, strong) UIButton *btn;
 

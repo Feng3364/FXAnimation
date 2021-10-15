@@ -1,5 +1,5 @@
 //
-//  PushStyleVC.h
+//  SystemTransitionVC.h
 //  FXAnimation
 //
 //  Created by Felix on 2021/8/11.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PushStyleVC : UIViewController
+@interface SystemTransitionVC : UIViewController
 
 @end
 
