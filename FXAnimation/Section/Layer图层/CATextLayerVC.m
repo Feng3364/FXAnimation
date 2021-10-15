@@ -26,7 +26,7 @@
     textLayer.foregroundColor = UIColor.redColor.CGColor;
     textLayer.alignmentMode = kCAAlignmentCenter;
     textLayer.wrapped = YES;
-    textLayer.contentsScale = UIScreen.mainScreen.scale;
+    textLayer.contentsScale = UIScreen.mainScreen.scale;//适配retain屏
     
     UIFont *font = [UIFont systemFontOfSize:15];
     CFStringRef fontName = (__bridge CFStringRef)font.fontName;

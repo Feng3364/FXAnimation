@@ -32,9 +32,9 @@
     
     [path moveToPoint:CGPointMake(150, 125)];
     [path addLineToPoint:CGPointMake(150, 175)];
-    [path addLineToPoint:CGPointMake(135, 225)];
+    [path addLineToPoint:CGPointMake(130, 225)];
     [path moveToPoint:CGPointMake(150, 175)];
-    [path addLineToPoint:CGPointMake(175, 225)];
+    [path addLineToPoint:CGPointMake(180, 225)];
     [path moveToPoint:CGPointMake(100, 150)];
     [path addLineToPoint:CGPointMake(200, 150)];
     

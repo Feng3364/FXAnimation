@@ -99,7 +99,7 @@
 
 /// 取消高亮
 - (void)setHighlighted:(BOOL)highlighted {
-    [super setHighlighted:highlighted];
+    [super setHighlighted:false];
 }
 
 - (void)startAnimation {

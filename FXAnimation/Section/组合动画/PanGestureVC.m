@@ -15,6 +15,7 @@
 //坐标记录
 @property (nonatomic, assign) CGPoint originCenter;
 @property (nonatomic, assign) CGRect originFrame;
+//圆1的半径
 @property (nonatomic, assign) CGFloat radius;
 
 @end

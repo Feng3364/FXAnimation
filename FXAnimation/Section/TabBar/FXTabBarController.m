@@ -29,14 +29,16 @@
     //图片大小建议32*32
     [self addChildrenViewController:[[UIViewController alloc] init] andTitle:@"首页" andImageName:@"AppIcon"];
     [self addChildrenViewController:[[UIViewController alloc] init] andTitle:@"应用" andImageName:@"AppIcon"];
-    [self addChildrenViewController:[[UIViewController alloc] init] andTitle:@"发布" andImageName:@"AppIcon"];
+    [self addChildrenViewController:[[UIViewController alloc] init] andTitle:@"" andImageName:@""];
     [self addChildrenViewController:[[UIViewController alloc] init] andTitle:@"消息" andImageName:@"AppIcon"];
     [self addChildrenViewController:[[UIViewController alloc] init] andTitle:@"我的" andImageName:@"AppIcon"];
 }
 
-- (void)addChildrenViewController:(UIViewController *)childVC andTitle:(NSString *)title andImageName:(NSString *)imageName{
-    childVC.tabBarItem.image = [UIImage imageNamed:imageName];
-    childVC.tabBarItem.selectedImage =  [UIImage imageNamed:imageName];
+- (void)addChildrenViewController:(UIViewController *)childVC andTitle:(NSString *)title andImageName:(NSString *)imageName {
+    if (imageName.length > 0) {
+        childVC.tabBarItem.image = [UIImage imageNamed:imageName];
+        childVC.tabBarItem.selectedImage =  [UIImage imageNamed:imageName];
+    }
     childVC.title = title;
     [self addChildViewController:childVC];
 }
@@ -57,7 +59,7 @@
     CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     rotationAnimation.toValue = [NSNumber numberWithFloat:M_PI*2.0];
     rotationAnimation.duration = 3.0;
-    rotationAnimation.repeatCount = HUGE;
+    rotationAnimation.repeatCount = 1;
     [self.customTabBar.centerBtn.layer addAnimation:rotationAnimation forKey:@"key"];
 }
 

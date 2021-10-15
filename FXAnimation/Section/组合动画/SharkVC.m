@@ -34,9 +34,9 @@
     CAKeyframeAnimation *animate = [CAKeyframeAnimation animation];
     animate.keyPath = @"transform.rotation";
     animate.values = @[
-        @angleToRadians(-3),
-        @angleToRadians(5),
-        @angleToRadians(-3),
+        @angleToRadians(-10),
+        @angleToRadians(10),
+        @angleToRadians(-10),
     ];
     animate.autoreverses = true;
     animate.speed = 2;

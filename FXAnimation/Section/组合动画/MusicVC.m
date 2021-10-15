@@ -84,10 +84,12 @@
     rate = fabs(rate);
     [self resetView];
     
+    // 音符旋转
     [self addNoteAnimation:@"icon_home_musicnote1" delayTime:0.0f rate:rate];
     [self addNoteAnimation:@"icon_home_musicnote2" delayTime:1.0f rate:rate];
     [self addNoteAnimation:@"icon_home_musicnote1" delayTime:2.0f rate:rate];
-    
+
+    // 围绕z轴旋转
     CABasicAnimation* rotationAnimation;
     rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0];

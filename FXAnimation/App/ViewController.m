@@ -32,8 +32,8 @@
     self.dataArray = @[
         @{@"title": @"基础动画", @"list": @[
             @{@"title": @"平移+旋转+变色", @"vc": @"CABasicAnimationVC"},
-            @{@"title": @"展示图片", @"vc": @"CGImageVC"},
-            @{@"title": @"景深", @"vc": @"ZPositionVC"},
+            @{@"title": @"Layer展示图片", @"vc": @"CGImageVC"},
+            @{@"title": @"景深区分", @"vc": @"ZPositionVC"},
             @{@"title": @"3D旋转", @"vc": @"CGTransform3DVC"},
             @{@"title": @"透视投影实现立体盒子", @"vc": @"CGTransformPracticeVC"},
         ]},

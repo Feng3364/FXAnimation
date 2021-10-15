@@ -23,6 +23,16 @@
         
         ViewController *vc = [ViewController new];
         UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+        if (@available (iOS 15, *)) {
+            UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+            appearance.backgroundColor = UIColor.blackColor;
+            appearance.titleTextAttributes = @{
+                NSFontAttributeName: [UIFont systemFontOfSize:20],
+                NSForegroundColorAttributeName: [UIColor whiteColor],
+            };
+            navi.navigationBar.standardAppearance = appearance;
+            navi.navigationBar.scrollEdgeAppearance = appearance;
+        }
         self.window.rootViewController = navi;
         [self.window makeKeyAndVisible];
     }

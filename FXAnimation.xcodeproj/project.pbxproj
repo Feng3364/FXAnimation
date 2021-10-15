@@ -234,14 +234,14 @@
 		DC94480D26B3A77D00F896D0 /* FXAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				DC94483726B3BCD300F896D0 /* Animation */,
+				DC94483726B3BCD300F896D0 /* Section */,
 				DC18636E2715908100A6B5B7 /* App */,
 				DC18636F2715909100A6B5B7 /* Support */,
 			);
 			path = FXAnimation;
 			sourceTree = "<group>";
 		};
-		DC94483726B3BCD300F896D0 /* Animation */ = {
+		DC94483726B3BCD300F896D0 /* Section */ = {
 			isa = PBXGroup;
 			children = (
 				DC18636B27158DEC00A6B5B7 /* 基础动画 */,
@@ -249,7 +249,7 @@
 				DC9ECADD271466D600C5F15A /* TabBar */,
 				DC18636D2715903B00A6B5B7 /* 组合动画 */,
 			);
-			path = Animation;
+			path = Section;
 			sourceTree = "<group>";
 		};
 		DC9ECADD271466D600C5F15A /* TabBar */ = {

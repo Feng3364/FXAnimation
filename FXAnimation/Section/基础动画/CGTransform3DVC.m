@@ -39,11 +39,11 @@
     containerView.layer.sublayerTransform = perspective;//影响子视图
     
     _imgv2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    _imgv2.image = [UIImage imageNamed:@"AppIcon"];
+    _imgv2.image = [UIImage imageNamed:@"icon_home_like_after"];
     [containerView addSubview:_imgv2];
     
     _imgv3 = [[UIImageView alloc] initWithFrame:CGRectMake(100, 0, 100, 100)];
-    _imgv3.image = [UIImage imageNamed:@"AppIcon"];
+    _imgv3.image = [UIImage imageNamed:@"icon_home_like_before"];
     [containerView addSubview:_imgv3];
     
     _imgv4 = [[UIImageView alloc] initWithFrame:CGRectMake(100, 400, 100, 100)];
@@ -52,10 +52,10 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    // 绕y轴旋转
+    // 绕x轴旋转
     CATransform3D transform = CATransform3DIdentity;
     transform.m34 = -1 / 500;//设置投影方式为透视投影（呈现3D效果）
-    transform = CATransform3DRotate(transform, M_PI_4, 0, 1, 0);
+    transform = CATransform3DRotate(transform, M_PI_4, 1, 0, 0);
     _imgv1.layer.transform = transform;
     _imgv1.layer.doubleSided = NO;//（默认开启正背面渲染）
     
