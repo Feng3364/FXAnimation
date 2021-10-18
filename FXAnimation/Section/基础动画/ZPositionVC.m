@@ -5,6 +5,11 @@
 //  Created by Felix on 2021/7/30.
 //
 
+/*
+ 思路:
+ 1.设置zPosition修改景深（可以粗略理解为修改图层层级）
+ */
+
 #import "ZPositionVC.h"
 
 @interface ZPositionVC ()

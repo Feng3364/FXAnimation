@@ -5,6 +5,11 @@
 //  Created by Felix on 2021/10/12.
 //
 
+/*
+ 思路:
+ 1.CATextLayer替代UILabel
+ */
+
 #import "CATextLayerVC.h"
 
 @interface CATextLayerVC ()

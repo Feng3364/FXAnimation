@@ -5,6 +5,13 @@
 //  Created by Felix on 2021/8/8.
 //
 
+/*
+ 思路:
+ 1.AVPlayLayer播放视频
+ 2.CATransform3DMakeRotation实现图层旋转
+ 3.CABasicAnimation设置transform.rotation.x实现翻转（设置animation为spinAnimation）
+ */
+
 #import "AVPlayLayerVC.h"
 #import <AVFoundation/AVFoundation.h>
 

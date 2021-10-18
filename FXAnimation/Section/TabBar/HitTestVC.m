@@ -5,6 +5,12 @@
 //  Created by Felix on 2021/7/30.
 //
 
+/*
+ 思路:
+ 1.HitTest调用顺序：touch->UIApplication->UIWindow->UIViewController->UIView->Subview->...->当前view
+ 2.事件的传递顺序与之相反
+ */
+
 #import "HitTestVC.h"
 
 @interface HitTestVC ()
@@ -41,17 +47,16 @@
     } else if (layer == self.containerView.layer) {
         NSLog(@"在红色view中");
     } else {
-        NSLog(@"...");
+        NSLog(@"在containerView中");
     }
 }
 
 @end
 
 
+// 仿写hitTest响应链
 @implementation HitTestView
 
-// HitTest调用顺序：touch->UIApplication->UIWindow->UIViewController->UIView->Subview->...->当前view
-//事件的传递顺序与之相反
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     // 判断是否有交互、是否隐藏
     if (self.isUserInteractionEnabled == NO || self.alpha  == 0.0 || self.hidden == true) {

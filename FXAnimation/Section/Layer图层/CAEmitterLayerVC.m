@@ -5,6 +5,11 @@
 //  Created by Felix on 2021/8/7.
 //
 
+/*
+ 思路:
+ 1.CAEmitterLayer实现粒子效果
+ */
+
 #import "CAEmitterLayerVC.h"
 
 @interface CAEmitterLayerVC ()

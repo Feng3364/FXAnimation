@@ -5,6 +5,12 @@
 //  Created by Felix on 2021/7/30.
 //
 
+/*
+ 思路:
+ 1.使用context属性添加寄宿图
+ 2.contentMode&contentsGravity修改寄宿图展示形式
+ */
+
 #import "CGImageVC.h"
 
 @interface CGImageVC ()

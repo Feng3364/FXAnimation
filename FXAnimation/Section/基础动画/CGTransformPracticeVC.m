@@ -7,6 +7,12 @@
 
 #import "CGTransformPracticeVC.h"
 
+/*
+ 思路:
+ 1.CATransform3D设置3D旋转
+ 2.将六个面拼凑起来就是个立方体
+ */
+
 @interface CGTransformPracticeVC ()
 
 @property (nonatomic, strong) UIView *containerView;

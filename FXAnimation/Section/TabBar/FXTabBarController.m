@@ -5,6 +5,12 @@
 //  Created by Felix on 2021/10/11.
 //
 
+/*
+ 思路:
+ 1.使用自定义TabBar替代系统TabBar（重写hitTest方法即可实现超出tabbar部分的视图响应手势）
+ 2.继承自定义tabbarController，通过代理实现点击事件的处理
+ */
+
 #import "FXTabBarController.h"
 #import "CustomTabBar.h"
 

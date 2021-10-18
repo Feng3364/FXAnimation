@@ -5,6 +5,12 @@
 //  Created by Felix on 2021/10/12.
 //
 
+/*
+ 思路:
+ 1.贝塞尔画路径
+ 2.CAShaperLayer展示
+ */
+
 #import "CAShapeLayerVC.h"
 
 @interface CAShapeLayerVC ()
@@ -50,7 +56,6 @@
     CGRect rect = CGRectMake(100, 350, 100, 100);
     CGSize radii = CGSizeMake(20, 20);
     UIRectCorner corners1 = UIRectCornerBottomLeft | UIRectCornerBottomRight;
-//    UIRectCorner corners2 = UIRectCornerTopLeft | UIRectCornerTopRight;
     UIBezierPath *path2 = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners1 cornerRadii:radii];
     
     CAShapeLayer *shapeLayer2 = [CAShapeLayer layer];

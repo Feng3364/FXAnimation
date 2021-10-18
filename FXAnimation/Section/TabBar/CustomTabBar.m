@@ -44,7 +44,7 @@
         if (CGRectContainsPoint(self.centerBtn.bounds, tempPoint)){
             //返回按钮
             return _centerBtn;
-        }else {
+        } else {
             return [super hitTest:point withEvent:event];
         }
     }

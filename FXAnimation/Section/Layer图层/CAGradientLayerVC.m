@@ -5,6 +5,11 @@
 //  Created by Felix on 2021/8/7.
 //
 
+/*
+ 思路:
+ 1.CAGradientLayer实现渐变色
+ */
+
 #import "CAGradientLayerVC.h"
 
 @interface CAGradientLayerVC ()

@@ -7,6 +7,12 @@
 
 #import "CGTransform3DVC.h"
 
+/*
+ 思路:
+ 1.CATransform3D设置3D旋转
+ 2.使用CATransform3DIdentity+m34设置成3D效果
+ */
+
 @interface CGTransform3DVC ()
 
 @property (nonatomic, strong) UIImageView *imgv1;

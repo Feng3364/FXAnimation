@@ -5,6 +5,12 @@
 //  Created by Felix on 2021/7/30.
 //
 
+/*
+ 思路:
+ 1.CABasicAnimation设置offset.y进行平移动画
+ 2.CATransaction修改隐式动画——提现背景色变化的过程
+ */
+
 #import "CABasicAnimationVC.h"
 
 @interface CABasicAnimationVC ()
