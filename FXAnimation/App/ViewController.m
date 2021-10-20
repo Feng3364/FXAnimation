@@ -63,6 +63,10 @@
             @{@"title": @"音乐播放效果", @"vc": @"MusicVC"},
             @{@"title": @"持续放大缩小效果", @"vc": @"ScaleVC"},
         ]},
+        @{@"title": @"实操案例", @"list": @[
+            @{@"title": @"登录场景", @"vc": @"LoginVC"},
+            @{@"title": @"树叶飘落", @"vc": @"LeafVC"},
+        ]},
     ];
 }
 
@@ -111,6 +115,9 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.tableHeaderView = [UIView new];
+        if (@available(iOS 15.0, *)) {
+            _tableView.sectionHeaderTopPadding = 0;
+        }
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     }
     return _tableView;

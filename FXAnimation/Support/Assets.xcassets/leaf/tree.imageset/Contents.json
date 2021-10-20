@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "CC_log.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "background@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
