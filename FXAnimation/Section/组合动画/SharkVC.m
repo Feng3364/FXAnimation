@@ -5,6 +5,11 @@
 //  Created by Felix on 2021/8/9.
 //
 
+/*
+ 思路:
+ 1.使用关键帧动画（transform.rotation）完成摇晃效果
+ */
+
 #import "SharkVC.h"
 #define angleToRadians(angle) ((angle)/180.0 * M_PI)
 

@@ -5,6 +5,13 @@
 //  Created by Felix on 2021/8/8.
 //
 
+/*
+ 思路:
+ 1.使用CAEmitterLayer实现下雨效果
+ 2.birthRate修改是否下雨
+ 3.birthRate&scale表示雨量大小
+ */
+
 #import "RainEmitterVC.h"
 
 @interface RainEmitterVC ()

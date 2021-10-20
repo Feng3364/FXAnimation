@@ -9,13 +9,43 @@
 #define FavoriteViewLikeBeforeTag 1 //点赞
 #define FavoriteViewLikeAfterTag  2 //取消点赞
 
+/*
+ 思路:
+ 1.用两个图片表示点赞状态
+ 2.点赞动画：遍历生成六个三角形（散开动画：放大+移动路径）
+ 3.取消动画：UIView.animateWithDuration展示红心旋转隐藏
+ */
+
+#pragma mark - UIViewController-LikeVC
+@interface LikeVC ()
+@property (nonatomic, strong) LikeView *likeView;
+@end
+
+@implementation LikeVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self setupUI];
+}
+
+#pragma mark - UI
+- (void)setupUI {
+    self.likeView = [[LikeView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+   
+    self.likeView.likeDuration = 0.5;
+    self.likeView.zanFillColor = [UIColor redColor];
+    [self.view addSubview:self.likeView];
+}
+
+@end
+
+
 #pragma mark - UIView-LikeView
 @interface LikeView ()
 
 @property (nonatomic, strong) UIImageView *likeBefore;
 @property (nonatomic, strong) UIImageView *likeAfter;
-@property (nonatomic, assign) CGFloat     likeDuration;
-@property (nonatomic, strong) UIColor     *zanFillColor;
 
 @end
 
@@ -24,7 +54,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _likeBefore = [[UIImageView alloc] initWithFrame:frame];
+        _likeBefore = [[UIImageView alloc] initWithFrame:self.bounds];
         _likeBefore.contentMode = UIViewContentModeCenter;
         _likeBefore.image = [UIImage imageNamed:@"icon_home_like_before"];
         _likeBefore.userInteractionEnabled = true;
@@ -32,7 +62,7 @@
         [_likeBefore addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)]];
         [self addSubview:_likeBefore];
         
-        _likeAfter = [[UIImageView alloc] initWithFrame:frame];
+        _likeAfter = [[UIImageView alloc] initWithFrame:self.bounds];
         _likeAfter.contentMode = UIViewContentModeCenter;
         _likeAfter.image = [UIImage imageNamed:@"icon_home_like_after"];
         _likeAfter.userInteractionEnabled = true;
@@ -80,12 +110,6 @@
             layer.transform = CATransform3DMakeRotation(M_PI / 3.0f * i, 0.0, 0.0, 1.0);
             [self.layer addSublayer:layer];
             
-            CAAnimationGroup *group = [CAAnimationGroup animation];
-            group.removedOnCompletion = false;
-            group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-            group.fillMode = kCAFillModeForwards;
-            group.duration = duration;
-            
             CABasicAnimation *scaleAnimate = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
             scaleAnimate.fromValue = @0.0;
             scaleAnimate.toValue = @1.0;
@@ -101,6 +125,12 @@
             pathAnim.toValue = (__bridge id)endPath.CGPath;
             pathAnim.beginTime = duration * 0.2f;
             pathAnim.duration = duration * 0.8f;
+            
+            CAAnimationGroup *group = [CAAnimationGroup animation];
+            group.removedOnCompletion = false;
+            group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+            group.fillMode = kCAFillModeForwards;
+            group.duration = duration;
             [group setAnimations:@[scaleAnimate, pathAnim]];
             [layer addAnimation:group forKey:nil];
         }
@@ -110,8 +140,8 @@
         _likeAfter.transform = CGAffineTransformScale(CGAffineTransformMakeRotation(-M_PI/3*2), 0.5f, 0.5f);
         [UIView animateWithDuration:0.4f
                               delay:0.2f
-             usingSpringWithDamping:0.6f
-              initialSpringVelocity:0.8f
+             usingSpringWithDamping:0.6f //速度衰减比例(取值范围0~1,值越低震动越强)
+              initialSpringVelocity:0.8f //初始化速度（值越高则物品的速度越快）
                             options:UIViewAnimationOptionCurveEaseIn
                          animations:^{
                              self.likeBefore.alpha = 0.0f;
@@ -134,35 +164,6 @@
             self.likeAfter.userInteractionEnabled = true;
         }];
     }
-}
-
-@end
-
-
-#pragma mark - UIViewController-LikeVC
-@interface LikeVC ()
-@property (nonatomic, strong) LikeView *likeView;
-@end
-
-@implementation LikeVC
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self setupUI];
-}
-
-#pragma mark - UI
-- (void)setupUI {
-    CGFloat cx = 5;
-    CGFloat width = 50 * cx;
-    CGFloat height = 45 * cx;
-    self.likeView = [[LikeView alloc] initWithFrame:CGRectMake(100, 100, width, height)];
-   
-    self.likeView.likeDuration = 0.5;
-    self.likeView.zanFillColor = [UIColor redColor];
-    [self.view addSubview:self.likeView];
-    self.view.backgroundColor = [UIColor blackColor];
 }
 
 @end

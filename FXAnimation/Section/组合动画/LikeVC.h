@@ -9,12 +9,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LikeView : UIView
+@interface LikeVC : UIViewController
 
 @end
 
 
-@interface LikeVC : UIViewController
+@interface LikeView : UIView
+
+@property (nonatomic, assign) CGFloat likeDuration;
+@property (nonatomic, strong) UIColor *zanFillColor;
 
 @end
 

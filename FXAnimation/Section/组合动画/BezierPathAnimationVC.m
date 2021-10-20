@@ -5,6 +5,11 @@
 //  Created by Felix on 2021/8/10.
 //
 
+/*
+ 思路:
+ 1.使用关键帧动画（position）实现小汽车的移动
+ */
+
 #import "BezierPathAnimationVC.h"
 
 @interface BezierPathAnimationVC ()

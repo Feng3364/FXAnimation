@@ -5,6 +5,15 @@
 //  Created by Felix on 2021/8/10.
 //
 
+/*
+ 思路:
+ 1.默认两个圆
+ 2.通过拖拽手势绘制当前视图
+ 3.拖拽中固定圆缩小，视图实时变化
+ 4.拖到一定范围后，固定圆消失
+ 5.拖拽结束回归原点，同时有个反弹效果
+ */
+
 #import "PanGestureVC.h"
 
 @interface PanGestureVC ()

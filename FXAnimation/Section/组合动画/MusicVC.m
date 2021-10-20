@@ -5,8 +5,16 @@
 //  Created by Felix on 2021/8/21.
 //
 
+/*
+ 思路:
+ 1.旋转+音符
+ 2.CD动画：绕z轴旋转
+ 3.音符动画：移动+缩放+旋转+透明度
+ */
+
 #import "MusicVC.h"
 
+#pragma mark - UIViewController-MusicVC
 @interface MusicVC ()
 
 @end
@@ -35,7 +43,6 @@
 
 
 #pragma mark - UIView-MusicAlbumView
-
 @interface MusicAlbumView ()
 
 @property (nonatomic, strong) UIView *albumContainer;

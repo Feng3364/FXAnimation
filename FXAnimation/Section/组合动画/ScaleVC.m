@@ -5,6 +5,13 @@
 //  Created by Felix on 2021/8/21.
 //
 
+/*
+ 思路:
+ 1.需求：图片不断放大缩小
+ 2.点赞动画：遍历生成六个三角形（散开动画：放大+移动路径）
+ 3.取消动画：UIView.animateWithDuration展示红心旋转隐藏
+ */
+
 #import "ScaleVC.h"
 
 #define BreathAnimationKey @"BreathAnimationKey"
@@ -51,8 +58,7 @@ CGFloat HeartWH = 200;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     [animation setValue:BreathAnimationKey forKey:BreathAnimationName];
     [layer addAnimation:animation forKey:BreathAnimationKey];
-
-
+    
     CALayer *breathLayer = [CALayer layer];
     breathLayer.position = layer.position;
     breathLayer.bounds = layer.bounds;
@@ -71,9 +77,9 @@ CGFloat HeartWH = 200;
     CAKeyframeAnimation *opacityAnimation = [CAKeyframeAnimation animation];
     opacityAnimation.keyPath = @"opacity";
     opacityAnimation.values = @[@1.f, @0.f];
-    opacityAnimation.duration = 0.4f;
     opacityAnimation.keyTimes = @[@0.0f, @1.0f];
     opacityAnimation.repeatCount = FLT_MAX;
+    opacityAnimation.duration = animation.duration;
     opacityAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
 
     CAAnimationGroup *scaleOpacityGroup = [CAAnimationGroup animation];

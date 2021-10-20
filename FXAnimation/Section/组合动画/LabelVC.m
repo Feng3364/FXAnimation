@@ -7,6 +7,12 @@
 
 #import "LabelVC.h"
 
+/*
+ 思路:
+ 1.虚化+放大缩小
+ 2.前0.4进行虚化，全程不断放大缩小
+ */
+
 @interface LabelVC ()
 
 @property (nonatomic, strong) UILabel *label;

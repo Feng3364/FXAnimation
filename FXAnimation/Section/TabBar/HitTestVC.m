@@ -13,6 +13,7 @@
 
 #import "HitTestVC.h"
 
+#pragma mark - UIViewController-HitTestVC
 @interface HitTestVC ()
 
 @property (strong, nonatomic) UIView *containerView;
@@ -54,6 +55,7 @@
 @end
 
 
+#pragma mark - UIView-HitTestView
 // 仿写hitTest响应链
 @implementation HitTestView
 

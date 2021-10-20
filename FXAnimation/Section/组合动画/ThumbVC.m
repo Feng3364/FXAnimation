@@ -5,8 +5,17 @@
 //  Created by Felix on 2021/8/8.
 //
 
+/*
+ 思路:
+ 1.重写按钮的选中效果
+ 2.使用关键帧动画（transform.scale）完成放大效果
+ 3.放大之后实现粒子效果
+ 4.取消点赞时移除动画
+ */
+
 #import "ThumbVC.h"
 
+#pragma mark - UIViewController-ThumbVC
 @interface ThumbVC ()
 
 @end
@@ -37,6 +46,7 @@
 @end
 
 
+#pragma mark - UIButton-LikeButton
 @implementation LikeButton
 
 - (instancetype)initWithFrame:(CGRect)frame {
