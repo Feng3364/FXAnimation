@@ -32,8 +32,10 @@
     [self.view addSubview:self.summerLabel];
     [self.view addSubview:self.autumnLabel];
     [self.view addSubview:self.leafImgv];
+    [self.view.layer addSublayer:self.leafLayer];
 }
 
+#pragma mark - Action
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self setupAnimation];
 }
@@ -56,30 +58,36 @@
         self.summerLabel.transform = CGAffineTransformIdentity;
     }];
     
-    // 树叶1
-    [self moveLeafWithOffset:CGPointMake(15, 80) duration:0.4 completion:^(BOOL finished) {
-        [self moveLeafWithOffset:CGPointMake(30, 105) duration:0.6 completion:^(BOOL finished) {
-            [self moveLeafWithOffset:CGPointMake(40, 110) duration:1.2 completion:^(BOOL finished) {
-                [self moveLeafWithOffset:CGPointMake(90, 80) duration:1.2 completion:^(BOOL finished) {
-                    [self moveLeafWithOffset:CGPointMake(80, 100) duration:0.6 completion:nil];
-                }];
-            }];
+    // 树叶1（animte）
+    [UIView animateKeyframesWithDuration:4 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
+        CGPoint center = self.leafImgv.center;
+        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.1 animations:^{
+            self.leafImgv.center = (CGPoint){ center.x + 15, center.y + 80 };
         }];
-    }];
-    
-    [UIView animateWithDuration:4 animations: ^{
-        self.leafImgv.transform = CGAffineTransformMakeRotation(M_PI);
+        [UIView addKeyframeWithRelativeStartTime:0.1 relativeDuration:0.15 animations: ^{
+            self.leafImgv.center = (CGPoint){ center.x + 45, center.y + 185 };
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.25 relativeDuration:0.3 animations: ^{
+            self.leafImgv.center = (CGPoint){ center.x + 90, center.y + 295 };
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.55 relativeDuration:0.3 animations: ^{
+            self.leafImgv.center = (CGPoint){ center.x + 180, center.y + 375 };
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.85 relativeDuration:0.15 animations: ^{
+            self.leafImgv.center = (CGPoint){ center.x + 260, center.y + 435 };
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:1 animations:^{
+            self.leafImgv.transform = CGAffineTransformMakeRotation(M_PI);
+        }];
     } completion:^(BOOL finished) {
-        self.leafImgv.frame = CGRectMake(100, 100, 20, 20);
+        self.leafImgv.center = CGPointMake(100, 100);
     }];
     
-    // 树叶2
-    [self.view.layer addSublayer:self.leafLayer];
-    
+    // 树叶2（Animation）
     UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(20, 200)];
+    [path moveToPoint:CGPointMake(50, 100)];
     [path addCurveToPoint:CGPointMake(300, 200)
-            controlPoint1:CGPointMake(100, 100)
+            controlPoint1:CGPointMake(100, 200)
             controlPoint2:CGPointMake(200, 300)];
     
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
@@ -87,7 +95,15 @@
     animation.path = path.CGPath;
     animation.duration = 4.0;
     animation.rotationMode = kCAAnimationRotateAuto;
-    [self.leafLayer addAnimation:animation forKey:nil];
+    
+    CABasicAnimation *rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.x"];
+    rotation.toValue = @(360 * M_PI / 180);
+    
+    CAAnimationGroup *animationGroup = [[CAAnimationGroup alloc] init];
+    animationGroup.duration = 4.0f;
+    animationGroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    [animationGroup setAnimations:@[animation, rotation]];
+    [self.leafLayer addAnimation:animationGroup forKey:nil];
 }
 
 - (void)moveLeafWithOffset:(CGPoint)offset duration:(NSTimeInterval)duration completion:(void(^)(BOOL finished))completion {

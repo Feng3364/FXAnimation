@@ -1,5 +1,5 @@
 //
-//  LoginVC.h
+//  ScrollVC.h
 //  FXAnimation
 //
 //  Created by Felix on 2021/10/21.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LoginVC : UIViewController
+@interface ScrollVC : UIViewController
 
 @end
 

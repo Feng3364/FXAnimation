@@ -64,8 +64,10 @@
             @{@"title": @"持续放大缩小效果", @"vc": @"ScaleVC"},
         ]},
         @{@"title": @"实操案例", @"list": @[
-            @{@"title": @"登录场景", @"vc": @"LoginVC"},
+            @{@"title": @"注册场景", @"vc": @"RegisterVC"},
             @{@"title": @"树叶飘落", @"vc": @"LeafVC"},
+            @{@"title": @"标题隐藏", @"vc": @"ScrollVC"},
+            @{@"title": @"登录场景", @"vc": @"LoginVC"},
         ]},
     ];
 }

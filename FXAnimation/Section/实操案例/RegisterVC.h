@@ -1,15 +1,15 @@
 //
-//  LoginVC.h
+//  RegisterVC.h
 //  FXAnimation
 //
-//  Created by Felix on 2021/10/21.
+//  Created by Felix on 2021/10/20.
 //
 
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LoginVC : UIViewController
+@interface RegisterVC : UIViewController
 
 @end
 

@@ -31,12 +31,14 @@
 		DC948FFF26BE3C7B003205B6 /* CAEmitterLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC948FFE26BE3C7B003205B6 /* CAEmitterLayerVC.m */; };
 		DC9D2B3F2715D5C6004293B1 /* CAShapeLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2B3E2715D5C6004293B1 /* CAShapeLayerVC.m */; };
 		DC9D2B422715D5D1004293B1 /* CATextLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D2B412715D5D1004293B1 /* CATextLayerVC.m */; };
-		DC9E2C32271FC16800809829 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9E2C31271FC16800809829 /* LoginVC.m */; };
+		DC9E2C32271FC16800809829 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9E2C31271FC16800809829 /* RegisterVC.m */; };
 		DC9E2C35271FC92400809829 /* LeafVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9E2C34271FC92400809829 /* LeafVC.m */; };
 		DC9ECAE0271466F000C5F15A /* CustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9ECADF271466F000C5F15A /* CustomTabBar.m */; };
 		DC9ECAE32714680B00C5F15A /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9ECAE22714680B00C5F15A /* CustomTabBarController.m */; };
 		DC9ECAE62714695F00C5F15A /* FXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9ECAE52714695F00C5F15A /* FXTabBarController.m */; };
 		DCC05E7D26C0230E009A56C7 /* movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DCC05E7C26C0230E009A56C7 /* movie.mp4 */; };
+		DCD28548272115A1000299F8 /* ScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD28547272115A1000299F8 /* ScrollVC.m */; };
+		DCD2854B27215650000299F8 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD2854A27215650000299F8 /* LoginVC.m */; };
 		DCE50D5D26D0E0C0009CB342 /* MusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE50D5C26D0E0C0009CB342 /* MusicVC.m */; };
 		DCE50D6026D0F247009CB342 /* ScaleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE50D5F26D0F247009CB342 /* ScaleVC.m */; };
 		DCFA166D26B3F0450096BB69 /* CGImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA166C26B3F0450096BB69 /* CGImageVC.m */; };
@@ -93,8 +95,8 @@
 		DC9D2B3E2715D5C6004293B1 /* CAShapeLayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAShapeLayerVC.m; sourceTree = "<group>"; };
 		DC9D2B402715D5D1004293B1 /* CATextLayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATextLayerVC.h; sourceTree = "<group>"; };
 		DC9D2B412715D5D1004293B1 /* CATextLayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATextLayerVC.m; sourceTree = "<group>"; };
-		DC9E2C30271FC16800809829 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
-		DC9E2C31271FC16800809829 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		DC9E2C30271FC16800809829 /* RegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
+		DC9E2C31271FC16800809829 /* RegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
 		DC9E2C33271FC92400809829 /* LeafVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeafVC.h; sourceTree = "<group>"; };
 		DC9E2C34271FC92400809829 /* LeafVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeafVC.m; sourceTree = "<group>"; };
 		DC9ECADE271466F000C5F15A /* CustomTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTabBar.h; sourceTree = "<group>"; };
@@ -104,6 +106,10 @@
 		DC9ECAE42714695F00C5F15A /* FXTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXTabBarController.h; sourceTree = "<group>"; };
 		DC9ECAE52714695F00C5F15A /* FXTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXTabBarController.m; sourceTree = "<group>"; };
 		DCC05E7C26C0230E009A56C7 /* movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = movie.mp4; sourceTree = "<group>"; };
+		DCD28546272115A1000299F8 /* ScrollVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollVC.h; sourceTree = "<group>"; };
+		DCD28547272115A1000299F8 /* ScrollVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollVC.m; sourceTree = "<group>"; };
+		DCD2854927215650000299F8 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		DCD2854A27215650000299F8 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		DCE50D5B26D0E0C0009CB342 /* MusicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicVC.h; sourceTree = "<group>"; };
 		DCE50D5C26D0E0C0009CB342 /* MusicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicVC.m; sourceTree = "<group>"; };
 		DCE50D5E26D0F247009CB342 /* ScaleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScaleVC.h; sourceTree = "<group>"; };
@@ -262,10 +268,14 @@
 		DC9E2C2F271FC13600809829 /* 实操案例 */ = {
 			isa = PBXGroup;
 			children = (
-				DC9E2C30271FC16800809829 /* LoginVC.h */,
-				DC9E2C31271FC16800809829 /* LoginVC.m */,
+				DC9E2C30271FC16800809829 /* RegisterVC.h */,
+				DC9E2C31271FC16800809829 /* RegisterVC.m */,
 				DC9E2C33271FC92400809829 /* LeafVC.h */,
 				DC9E2C34271FC92400809829 /* LeafVC.m */,
+				DCD28546272115A1000299F8 /* ScrollVC.h */,
+				DCD28547272115A1000299F8 /* ScrollVC.m */,
+				DCD2854927215650000299F8 /* LoginVC.h */,
+				DCD2854A27215650000299F8 /* LoginVC.m */,
 			);
 			path = "实操案例";
 			sourceTree = "<group>";
@@ -366,9 +376,11 @@
 				DC94481326B3A77D00F896D0 /* SceneDelegate.m in Sources */,
 				DC55DC1926BB742F0020125C /* CABasicAnimationVC.m in Sources */,
 				DC9D2B422715D5D1004293B1 /* CATextLayerVC.m in Sources */,
+				DCD2854B27215650000299F8 /* LoginVC.m in Sources */,
 				DC9ECAE0271466F000C5F15A /* CustomTabBar.m in Sources */,
 				DC92BBD326C3E7D100C865EE /* SystemTransitionVC.m in Sources */,
 				DC1863712715920600A6B5B7 /* main.m in Sources */,
+				DCD28548272115A1000299F8 /* ScrollVC.m in Sources */,
 				DC878F4626BF91FE00E1D7E7 /* RainEmitterVC.m in Sources */,
 				DC948FF626BE2BC3003205B6 /* CATransformLayerVC.m in Sources */,
 				DC51BEAF26C0EBFA0000ADAE /* SharkVC.m in Sources */,
@@ -376,7 +388,7 @@
 				DCFA167426B3F1AA0096BB69 /* ZPositionVC.m in Sources */,
 				DCFA166D26B3F0450096BB69 /* CGImageVC.m in Sources */,
 				DC9D2B3F2715D5C6004293B1 /* CAShapeLayerVC.m in Sources */,
-				DC9E2C32271FC16800809829 /* LoginVC.m in Sources */,
+				DC9E2C32271FC16800809829 /* RegisterVC.m in Sources */,
 				DC9ECAE62714695F00C5F15A /* FXTabBarController.m in Sources */,
 				DCFA168226B3F5EC0096BB69 /* CGTransform3DVC.m in Sources */,
 				DC948FF926BE2EAF003205B6 /* CAGradientLayerVC.m in Sources */,
