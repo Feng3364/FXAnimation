@@ -9,15 +9,17 @@
 
 #define ScreenWidth UIScreen.mainScreen.bounds.size.width
 
+#pragma mark - UIViewController-LoginVC
 @interface LoginVC () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UIImageView *avatarImgv;
 @property (nonatomic, strong) UITextField *username;
 @property (nonatomic, strong) UITextField *password;
-@property (nonatomic, strong) UIButton *loginBtn;
+@property (nonatomic, strong) AnimationButton *loginBtn;
 @property (nonatomic, strong) UIButton *expandBtn;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy)   NSArray *dataArray;
+@property (nonatomic, assign) BOOL isAnimation;
 
 @end
 
@@ -52,16 +54,16 @@
     sender.isSelected ? [self showRecordList] : [self hideRecordList];
 }
 
-- (void)showRecordList {
-    [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.tableView.frame = CGRectMake(30, 150, ScreenWidth - 60, 300);
-    } completion:nil];
-}
-
-- (void)hideRecordList {
-    [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.tableView.frame = CGRectMake(30, 150, ScreenWidth - 60, 0);
-    } completion:nil];
+- (void)onClickLoginButton:(UIButton *)sender {
+    _isAnimation = !_isAnimation;
+    
+    if (_isAnimation) {
+        [self.loginBtn start];
+        [self animateToMakeButtonSmall];
+    } else {
+        [self.loginBtn stop];
+        [self animateToMakeButtonBig];
+    }
 }
 
 #pragma mark - Private
@@ -79,6 +81,30 @@
     [UIView animateWithDuration: 0.25 animations: ^{
         self.expandBtn.layer.transform = transform;
     }];
+}
+
+- (void)showRecordList {
+    [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.tableView.frame = CGRectMake(30, 150, ScreenWidth - 60, 300);
+    } completion:nil];
+}
+
+- (void)hideRecordList {
+    [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.tableView.frame = CGRectMake(30, 150, ScreenWidth - 60, 0);
+    } completion:nil];
+}
+
+- (void)animateToMakeButtonSmall {
+    [UIView animateWithDuration: 0.15 delay: 0 options: UIViewAnimationOptionCurveEaseIn animations: ^{
+        self.loginBtn.frame = CGRectMake((ScreenWidth - 50) / 2, 240, 50, 50);
+    } completion: nil];
+}
+
+- (void)animateToMakeButtonBig {
+    [UIView animateWithDuration: 0.15 delay: 0 options: UIViewAnimationOptionCurveEaseIn animations: ^{
+        self.loginBtn.frame = CGRectMake(30, 240, ScreenWidth - 60, 50);
+    } completion: nil];
 }
 
 #pragma mark - UITableViewDelegate
@@ -126,12 +152,15 @@
     return _password;
 }
 
-- (UIButton *)loginBtn {
+- (AnimationButton *)loginBtn {
     if (!_loginBtn) {
-        _loginBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        _loginBtn = [AnimationButton buttonWithType:UIButtonTypeCustom];
         _loginBtn.frame = CGRectMake(30, 240, ScreenWidth - 60, 50);
         _loginBtn.backgroundColor = UIColor.systemGreenColor;
+        _loginBtn.layer.cornerRadius = 25;
+        _loginBtn.radius = 20;
         [_loginBtn setTitle:@"Login" forState:UIControlStateNormal];
+        [_loginBtn addTarget:self action:@selector(onClickLoginButton:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _loginBtn;
 }
@@ -164,3 +193,84 @@
 }
 
 @end
+
+
+#pragma mark - UIButton-AnimationButton
+@interface AnimationButton ()
+
+@property (nonatomic, strong) CAShapeLayer *circle;
+@property (nonatomic, weak)   NSTimer *timer;
+
+@end
+
+@implementation AnimationButton
+
+#pragma mark - LifeCycle
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.circle.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.frame.size.width / 2 - _radius / 2, self.frame.size.height / 2 - _radius / 2, _radius, _radius)].CGPath;
+}
+
+#pragma mark - Public
+const NSTimeInterval duration = 1.2;
+- (void)start {
+    [self addAnimate];
+    if (_timer) {
+        [_timer invalidate];
+    }
+    NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:duration target:self selector: @selector(addAnimate) userInfo: nil repeats: YES];
+    _timer = timer;
+    
+    [UIView animateWithDuration: 0.15 animations: ^{
+        self.circle.opacity = 1;
+        [self setTitleColor: [UIColor colorWithWhite: 1 alpha: 0] forState: UIControlStateNormal];
+    }];
+}
+
+- (void)stop {
+    if (_timer) {
+        [_timer invalidate];
+    }
+    
+    [self.circle removeAllAnimations];
+    [UIView animateWithDuration: 0.15 animations: ^{
+        self.circle.opacity = 0;
+        [self setTitleColor: [UIColor colorWithWhite:1 alpha:1] forState: UIControlStateNormal];
+    }];
+}
+
+#pragma mark - Private
+- (void)addAnimate {
+    CABasicAnimation *endAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    endAnimation.fromValue = @0;
+    endAnimation.toValue = @1;
+    endAnimation.duration = duration;
+    endAnimation.removedOnCompletion = YES;
+    [self.circle addAnimation: endAnimation forKey: @"end"];
+    
+    CABasicAnimation *startAnimation = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
+    startAnimation.beginTime = CACurrentMediaTime() + duration / 2;
+    startAnimation.fromValue = @0;
+    startAnimation.toValue = @1;
+    startAnimation.removedOnCompletion = YES;
+    startAnimation.duration = duration / 2;
+    [self.circle addAnimation: startAnimation forKey: @"start"];
+}
+
+#pragma mark - Lazy
+- (CAShapeLayer *)circle {
+    if (!_circle) {
+        _circle = [CAShapeLayer layer];
+        _circle.fillColor = [UIColor clearColor].CGColor;
+        _circle.strokeColor = [UIColor whiteColor].CGColor;
+        _circle.lineWidth = 1;
+        _circle.opacity = 0;
+        _circle.strokeEnd = _circle.strokeStart = 0;
+        [self.layer addSublayer:_circle];
+    }
+    return _circle;
+}
+
+@end
+

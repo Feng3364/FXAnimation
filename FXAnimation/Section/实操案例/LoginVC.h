@@ -13,4 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+@interface AnimationButton : UIButton
+
+@property (nonatomic, assign) CGFloat radius;
+
+- (void)start;
+- (void)stop;
+
+@end
+
 NS_ASSUME_NONNULL_END
